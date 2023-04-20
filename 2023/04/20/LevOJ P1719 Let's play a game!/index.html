@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Masker</title>
+        <title> | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -32,7 +32,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -141,36 +143,11 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Masker</h1>
-                <h3>=Nothing is ture=</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1></h1>
     </div>
-</div>
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/04/20/LevOJ%20P1719%20Let's%20play%20a%20game!/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -180,105 +157,63 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <hr>
-<h2 id="title：LevOJ-P1719-Let’s-play-a-game"><a href="#title：LevOJ-P1719-Let’s-play-a-game" class="headerlink" title="title：LevOJ P1719 Let’s play a game!"></a>title：LevOJ P1719 Let’s play a game!</h2>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/LevOJ%20P1719%20Let's%20play%20a%20game!/" class="go-post">阅读全文</a>
-</div>
+    
+    <div class="content" v-pre>
+        <hr>
+<h2 id="title：LevOJ-P1719-Let’s-play-a-game"><a href="#title：LevOJ-P1719-Let’s-play-a-game" class="headerlink" title="title：LevOJ P1719 Let’s play a game!"></a>title：LevOJ P1719 Let’s play a game!</h2><span id="more"></span>
 
-<div class="post">
-    <a href="/2023/04/20/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><strong>思路</strong>：遍历每一个A<del>i</del>，如果A<del>i</del>&#x3D;k，则判断此时i是否为2的次幂。</p>
+<p>①如果是，则总操作数cnt+1；</p>
+<p>②如果不是则要判断i距离前面最近的2次幂的数2^j^之间的距离。</p>
+<p>如果cnt&gt;l，那么一定可以在某一次操作后是的i恰好为2的次幂，此时总操作数cnt+1；</p>
+<p>否则总操作数cnt&#x3D;(i-2^j^ -cnt)+cnt+1。</p>
+<p>AC代码：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/hello-world/" class="go-post">阅读全文</a>
-</div>
+using namespace std;
 
+int n,k;
 
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
+int a[300005];
+
+int main()&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    long long cnt=0;
+    for(int i=1;i&lt;=n;i++)&#123;
+        cin&gt;&gt;a[i];
+    &#125;
+    for(int i=1;i&lt;=n;i++)&#123;
+        if(a[i]!=k)&#123;
+            continue;
+        &#125;else&#123;
+            for(int j=0;j&lt;=19;j++)&#123;
+                if(i==pow(2,j))&#123;
+                    cnt++;
+                    break;
+                &#125;else&#123;
+                    if(i&gt;pow(2,j) &amp;&amp; i&lt;pow(2,j+1))&#123;
+                        if(cnt&gt;(i-pow(2,j)))&#123;
+                            cnt++;
+                        &#125;else&#123;
+                            cnt=i-pow(2,j)+1;
+                        &#125;
+                        break;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    cout&lt;&lt;cnt&lt;&lt;endl;
+&#125;
+</code></pre>
 
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Masker</div>
-        <div class="description">
-            <p>I must have lost my mind.<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://bakamashiro.github.io">bakamashiro</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -311,6 +246,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
