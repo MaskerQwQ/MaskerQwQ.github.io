@@ -161,12 +161,12 @@
     <div class="content" v-pre>
         <span id="more"></span>
 
-<p><strong>思路</strong>：遍历每一个A<del>i</del>，如果A<del>i</del>&#x3D;k，则判断此时i是否为2的次幂。</p>
-<p>①如果是，则总操作数cnt+1；</p>
-<p>②如果不是则要判断i距离前面最近的2次幂的数2^j^之间的距离。</p>
-<p>如果cnt&gt;l，那么一定可以在某一次操作后是的i恰好为2的次幂，此时总操作数cnt+1；</p>
-<p>否则总操作数cnt&#x3D;(i-2^j^ -cnt)+cnt+1。</p>
-<p>AC代码：</p>
+<p><strong>思路</strong>：遍历每一个<strong>A<del>i</del><strong>，如果</strong>A<del>i</del>&#x3D;k</strong>，则判断此时i是否为2的次幂。</p>
+<p>①如果是，则总操作数<strong>cnt+1</strong>；</p>
+<p>②如果不是则要判断<strong>i</strong>距离前面最近的2次幂的数<strong>2^j^</strong>之间的距离。</p>
+<p>如果<strong>cnt&gt;l</strong>，那么一定可以在某一次操作后是的i恰好为2的次幂，此时总操作数<strong>cnt+1</strong>；</p>
+<p>否则总操作数<br>$$<br>cnt&#x3D;(i-2^j -cnt)+cnt+1。<br>$$<br>时间复杂度：<strong>O(n)</strong></p>
+<p><strong>AC代码：</strong></p>
 <pre><code class="c++">#include&lt;bits/stdc++.h&gt;
 
 using namespace std;

@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Masker</title>
+        <title>LevOJ P1236 夺取宝藏 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -32,7 +32,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -141,36 +143,11 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Masker</h1>
-                <h3>=Nothing is ture=</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>LevOJ P1236 夺取宝藏</h1>
     </div>
-</div>
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/">
-        <h2 class="post-title">LevOJ P1236 夺取宝藏</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -180,133 +157,52 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/" class="go-post">阅读全文</a>
-</div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
 
-<div class="post">
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
-        <h2 class="post-title">LevOJ P1719 Let&#39;s play a game!</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/" class="go-post">阅读全文</a>
-</div>
+<p><strong>思路：</strong></p>
+<p>对于任意一点<strong>（i，j）</strong>来说，只能从<strong>（i-1，j）</strong>或者<strong>（i，j-1）</strong>到达<strong>（i，j）</strong>。</p>
+<p>设<strong>dp[i] [j]<strong>表示到达点</strong>（i，j）</strong>所能获取的最大价值，则有<br>$$<br>dp[i][j]&#x3D;max(dp[i-1][j],dp[i][j-1])+num[i][j]<br>$$<br>遍历所有点，最后**dp[m] [n]**就是所能获得的最大价值。</p>
+<p>时间复杂度*<em>O(m</em>n)**。</p>
+<p><strong>AC代码：</strong></p>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
 
-<div class="post">
-    <a href="/2023/04/20/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+using namespace std;
+
+typedef long long ll;
+
+int m,n;
+int num[1005][1005];
+int dp[1005][1005];
+
+int main()&#123;
+    while(scanf(&quot;%d%d&quot;,&amp;m,&amp;n)!=EOF)&#123;
+        memset(num,0,sizeof(num));
+        memset(dp,0,sizeof(dp));
+        for(int i=1;i&lt;=m;i++)&#123;
+            for(int j=1;j&lt;=n;j++)&#123;
+                cin&gt;&gt;num[i][j];
+            &#125;
+        &#125;
+        for(int i=1;i&lt;=m;i++)&#123;
+            for(int j=1;j&lt;=n;j++)&#123;
+                dp[i][j]=max(dp[i-1][j],dp[i][j-1])+num[i][j];
+            &#125;
+        &#125;
+        cout&lt;&lt;dp[m][n]&lt;&lt;endl;
+    &#125;
+    return 0;
+&#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
 
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Masker</div>
-        <div class="description">
-            <p>I must have lost my mind.<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://bakamashiro.github.io">bakamashiro</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -339,6 +235,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
