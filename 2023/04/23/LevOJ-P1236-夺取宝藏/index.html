@@ -168,8 +168,10 @@
 
 <p><strong>思路：</strong></p>
 <p>对于任意一点<strong>（i，j）</strong>来说，只能从<strong>（i-1，j）</strong>或者<strong>（i，j-1）</strong>到达<strong>（i，j）</strong>。</p>
-<p>设<strong>dp[i] [j]<strong>表示到达点</strong>（i，j）</strong>所能获取的最大价值，则有<br>$$<br>dp[i][j]&#x3D;max(dp[i-1][j],dp[i][j-1])+num[i][j]<br>$$<br>遍历所有点，最后**dp[m] [n]**就是所能获得的最大价值。</p>
-<p>时间复杂度*<em>O(m</em>n)**。</p>
+<p>设 <strong>dp[i] [j]</strong> 表示到达点<strong>（i，j）</strong>所能获取的最大价值，则有</p>
+<p>​																				$dp[i][j]&#x3D;max(dp[i-1][j],dp[i][j-1])+num[i][j]$</p>
+<p>遍历所有点，最后 <strong>dp[m] [n]</strong> 就是所能获得的最大价值。</p>
+<p>时间复杂度 <strong>O(m*n)</strong> 。</p>
 <p><strong>AC代码：</strong></p>
 <pre><code class="C++">#include&lt;bits/stdc++.h&gt;
 

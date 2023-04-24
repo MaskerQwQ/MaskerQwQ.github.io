@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Hello World | Masker</title>
+        <title>LevOJ P1268 连续子段的最大和 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,33 +150,51 @@
             <div id="main" v-show="!loading">
                 <div class="article">
     <div>
-        <h1>Hello World</h1>
+        <h1>LevOJ P1268 连续子段的最大和</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/4/20
+            2023/4/24
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <span id="more"></span>
+
+<p><strong>思路：</strong></p>
+<p>设 <strong>dp[i]</strong> 为前以第 <strong>i</strong> 个数字结尾的连续字段最大和，则有</p>
+<p>​																	$dp[i]&#x3D;max(num[i],dp[i-1]+num[i])$</p>
+<p>注意， <strong>dp[n]</strong> 并不能代表整段的连续字段最大和，只能表示以 i 为结尾的连续字段最大和。因此处理完第 <strong>i</strong> 个数字，将 <strong>dp[i]</strong> 与历史最大值比较，输出历史最大值即可。</p>
+<p>AC代码：</p>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int num[10005];
+int dp[10005];
+
+int main()&#123;
+    int n;
+    while(scanf(&quot;%d&quot;,&amp;n)!=EOF)&#123;
+        for(int i=1;i&lt;=n;i++)&#123;
+            cin&gt;&gt;a[i];
+        &#125;
+        int ans=-60000;
+        dp[1]=a[1];
+        for(int i=2;i&lt;=n;i++)&#123;
+            dp[i]=max(num[i],dp[i-1]+num[i]);
+            ans=max(ans,dp[i]);
+        &#125;
+        cout&lt;&lt;ans&lt;&lt;endl;
+    &#125;
+    return 0;
+&#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
     </div>
     
