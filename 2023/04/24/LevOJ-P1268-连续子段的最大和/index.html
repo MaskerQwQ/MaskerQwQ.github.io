@@ -170,6 +170,7 @@
 <p>设 <strong>dp[i]</strong> 为前以第 <strong>i</strong> 个数字结尾的连续字段最大和，则有</p>
 <p>​																	$dp[i]&#x3D;max(num[i],dp[i-1]+num[i])$</p>
 <p>注意， <strong>dp[n]</strong> 并不能代表整段的连续字段最大和，只能表示以 i 为结尾的连续字段最大和。因此处理完第 <strong>i</strong> 个数字，将 <strong>dp[i]</strong> 与历史最大值比较，输出历史最大值即可。</p>
+<p>时间复杂度 <strong>O(n)</strong> </p>
 <p>AC代码：</p>
 <pre><code class="C++">#include&lt;bits/stdc++.h&gt;
 
