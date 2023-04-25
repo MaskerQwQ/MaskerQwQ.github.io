@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | Masker</title>
+        <title>LevOJ P1475 智力大冲浪 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -32,6 +32,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -144,110 +148,85 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+                <div class="article">
+    <div>
+        <h1>LevOJ P1475 智力大冲浪</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/4/25
+        </span>
         
-        <div class="timeline" data-title="levojp1719let'splayagame!">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/20</div>
-                <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
-                    <h3>LevOJ P1719 Let&#39;s play a game!</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1236夺取宝藏">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/23</div>
-                <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/">
-                    <h3>LevOJ P1236 夺取宝藏</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1268连续子段的最大和">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/24</div>
-                <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-                    <h3>LevOJ P1268 连续子段的最大和</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1296分形宇宙">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/24</div>
-                <a href="/2023/04/24/LevOJ-P1296-%E5%88%86%E5%BD%A2%E5%AE%87%E5%AE%99/">
-                    <h3>LevOJ P1296 分形宇宙</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1305素数环">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1305-%E7%B4%A0%E6%95%B0%E7%8E%AF/">
-                    <h3>LevOJ P1305 素数环</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1439背包九讲(1)：简单的0-1背包">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1439-%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2-1-%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%840-1%E8%83%8C%E5%8C%85/">
-                    <h3>LevOJ P1439 背包九讲(1)：简单的0-1背包</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1475智力大冲浪">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1475-%E6%99%BA%E5%8A%9B%E5%A4%A7%E5%86%B2%E6%B5%AA/">
-                    <h3>LevOJ P1475 智力大冲浪</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
+
+<p><strong>思路：</strong></p>
+<p>贪心法，将所有比赛按照扣钱数从大到小排序，然后遍历。</p>
+<p>每次安排扣钱最多的比赛到刚好能完成比赛的时间段，这样能给前面匀出更多的时间安排其他的比赛。</p>
+<p><strong>AC代码：</strong></p>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int m,n,flag;
+
+struct game&#123;
+    int t;
+    int v;
+&#125;s[505];
+
+bool cmp(game a,game b)&#123;
+    return a.v&gt;b.v;
+&#125;
+
+bool v[505];
+
+int main()&#123;
+    while(scanf(&quot;%d%d&quot;,&amp;m,&amp;n)!=EOF)&#123;
+        memset(v,0,sizeof(v));
+        for(int i=1;i&lt;=n;i++)&#123;
+            cin&gt;&gt;s[i].t;
+        &#125;
+        for(int i=1;i&lt;=n;i++)&#123;
+            cin&gt;&gt;s[i].v;
+        &#125;
+        sort(s+1,s+n+1,cmp);
+        for(int i=1;i&lt;=n;i++)&#123;
+            flag=0;
+            for(int j=s[i].t;j&gt;0;j--)&#123;
+                if(v[j]==0)&#123;
+                    v[j]=1;
+                    flag=1;
+                    break;
+                &#125;
+            &#125;
+            if(!flag)&#123;
+                m-=s[i].v;
+            &#125;
+        &#125;
+        cout&lt;&lt;m&lt;&lt;endl;
+    &#125;
+    
+    
+    
+    return 0;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
                 <footer id="footer">
@@ -279,6 +258,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
