@@ -167,7 +167,7 @@
         <span id="more"></span>
 
 <p><strong>思路：</strong></p>
-<p><strong>wzy</strong>每次可以跳 <strong>1</strong> 到 <strong>k</strong> 个单位长度的正整数，那么对于任意一个位置 <strong>i</strong> ，可能由 <strong>[i-k,i-1]</strong>  中的任意一个位置跳跃而来，即有 <strong>k</strong> 种状态。若要在 <strong>i</strong> 的位置踩到的水坑数最少，那么在到达 <strong>i</strong> 之前的那个位置所踩的水坑数也要最少。是否需要将踩到的水坑数**+1**则只需要判断位置 <strong>i</strong> 是否在水坑内。</p>
+<p><strong>wzy</strong>每次可以跳 <strong>1</strong> 到 <strong>k</strong> 个单位长度的正整数，那么对于任意一个位置 <strong>i</strong> ，可能由 <strong>[i-k,i-1]</strong>  中的任意一个位置跳跃而来，即有 <strong>k</strong> 种状态。若要在 <strong>i</strong> 的位置踩到的水坑数最少，那么在到达 <strong>i</strong> 之前的那个位置所踩的水坑数也要最少。是否需要将踩到的水坑数 <strong>+1</strong> 则只需要判断位置 <strong>i</strong> 是否在水坑内。</p>
 <p>设 <strong>dp[i]</strong> 为位置 <strong>i</strong> 所踩的水坑数，<strong>water[i]</strong> 表示位置 <strong>i</strong> 是否是水坑， <strong>j</strong> 表示跳了多远，则有状态转移方程：</p>
 <p>$dp[i]&#x3D;min(dp[i],dp[i-j]+water[i])$</p>
 <p><strong>AC代码：</strong></p>
