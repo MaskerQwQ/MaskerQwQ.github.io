@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | Masker</title>
+        <title>Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -36,6 +36,8 @@
 
 
 
+
+<script src="/js/lib/home.js"></script>
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -144,166 +146,112 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                
-<div id="archives">
+                <div id="home-head">
+    <div
+        id="home-background"
+        ref="homeBackground"
+        data-images="/images/background.jpg"
+    ></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Masker</h1>
+                <h3>=Nothing is ture=</h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
+        <h2 class="post-title">LevOJ P1719 Let&#39;s play a game!</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/4/20
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            
+            <a class="page-num" href="/">1</a>
+        </span>
+        
+        <span class="current">2</span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
+
+    </div>
     
-    <div id="timeline-wrap" ref="timeline">
-        
-        <div class="timeline" data-title="levojp1719let'splayagame!">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/20</div>
-                <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
-                    <h3>LevOJ P1719 Let&#39;s play a game!</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">Masker</div>
+        <div class="description">
+            <p>I must have lost my mind.<br>…</p>
+
         </div>
         
-        <div class="timeline" data-title="levojp1236夺取宝藏">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/23</div>
-                <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/">
-                    <h3>LevOJ P1236 夺取宝藏</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
-        <div class="timeline" data-title="levojp1268连续子段的最大和">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/24</div>
-                <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-                    <h3>LevOJ P1268 连续子段的最大和</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://github.com/bkmashiro">bakamashiro</a>
             </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1296分形宇宙">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/24</div>
-                <a href="/2023/04/24/LevOJ-P1296-%E5%88%86%E5%BD%A2%E5%AE%87%E5%AE%99/">
-                    <h3>LevOJ P1296 分形宇宙</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1305素数环">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1305-%E7%B4%A0%E6%95%B0%E7%8E%AF/">
-                    <h3>LevOJ P1305 素数环</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1439背包九讲(1)：简单的0-1背包">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1439-%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2-1-%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%840-1%E8%83%8C%E5%8C%85/">
-                    <h3>LevOJ P1439 背包九讲(1)：简单的0-1背包</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1475智力大冲浪">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1475-%E6%99%BA%E5%8A%9B%E5%A4%A7%E5%86%B2%E6%B5%AA/">
-                    <h3>LevOJ P1475 智力大冲浪</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1477部分背包问题">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1477-%E9%83%A8%E5%88%86%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                    <h3>LevOJ P1477 部分背包问题</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1793求解迷宫问题">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1793-%E6%B1%82%E8%A7%A3%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/">
-                    <h3>LevOJ P1793 求解迷宫问题</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="levojp1794求解好多鱼问题">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/LevOJ-P1794-%E6%B1%82%E8%A7%A3%E5%A5%BD%E5%A4%9A%E9%B1%BC%E9%97%AE%E9%A2%98/">
-                    <h3>LevOJ P1794 求解好多鱼问题</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="p1809wzy的跑步">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/4/25</div>
-                <a href="/2023/04/25/P1809-wzy%E7%9A%84%E8%B7%91%E6%AD%A5/">
-                    <h3>P1809 wzy的跑步</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
+            
         </div>
         
     </div>
+</div>
+
+    </div>
+    
 </div>
 
                 <footer id="footer">
