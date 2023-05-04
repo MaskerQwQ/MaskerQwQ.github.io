@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Masker</title>
+        <title>LevOJ P1825 东方香霖堂 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -37,7 +37,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -146,169 +148,61 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Masker</h1>
-                <h3>=Nothing is ture=</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>LevOJ P1825 东方香霖堂</h1>
     </div>
-</div>
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-        <h2 class="post-title">LevOJ P1268 连续子段的最大和</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/4/24
+            2023/5/4
         </span>
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/" class="go-post">阅读全文</a>
-</div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
 
-<div class="post">
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/">
-        <h2 class="post-title">LevOJ P1236 夺取宝藏</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/23
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/" class="go-post">阅读全文</a>
-</div>
+<p><strong>思路:</strong></p>
+<p>贪心大水题 <strong>(⊙o⊙)</strong> </p>
+<p>将每个商品按价格从小到大排序，每次买最便宜的，等到没钱了买的数量就是最多能买的数量。</p>
+<p><strong>AC代码：</strong></p>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
 
-<div class="post">
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
-        <h2 class="post-title">LevOJ P1719 Let&#39;s play a game!</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/" class="go-post">阅读全文</a>
-</div>
+using namespace std;
 
+int a[10005];
 
-        <div class="page-current">
-    <div class="prev">
-        
-        <a class="page-num" href="/">
-            <i class="fa-solid fa-caret-left fa-fw"></i>
-        </a>
-        
-    </div>
-    <div class="page-index">
-        
-        <span>
-            
-            
-            <a class="page-num" href="/">1</a>
-        </span>
-        
-        <span class="current">2</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
+int main()&#123;
+    int n,k,cnt=0;
+    cin&gt;&gt;n&gt;&gt;k;
+    for(int i=1;i&lt;=n;i++)&#123;
+        cin&gt;&gt;a[i];
+    &#125;
+    sort(a+1,a+n+1);
+    for(int i=1;i&lt;=n;i++)&#123;
+        k-=a[i];
+        if(k&gt;=0)&#123;
+            cnt++;
+        &#125;else&#123;
+            break;
+        &#125;
+    &#125;
+    cout&lt;&lt;cnt;
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Masker</div>
-        <div class="description">
-            <p>I must have lost my mind.<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://github.com/bkmashiro">bakamashiro</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -341,6 +235,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
