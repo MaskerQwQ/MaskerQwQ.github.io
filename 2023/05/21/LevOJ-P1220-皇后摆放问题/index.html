@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Masker</title>
+        <title>LevOJ P1220 皇后摆放问题 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -37,7 +37,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -146,227 +148,117 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Masker</h1>
-                <h3>=Nothing is ture=</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>LevOJ P1220 皇后摆放问题</h1>
     </div>
-</div>
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/04/25/LevOJ-P1305-%E7%B4%A0%E6%95%B0%E7%8E%AF/">
-        <h2 class="post-title">LevOJ P1305 素数环</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/4/25
+            2023/5/21
         </span>
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/25/LevOJ-P1305-%E7%B4%A0%E6%95%B0%E7%8E%AF/" class="go-post">阅读全文</a>
-</div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
 
-<div class="post">
-    <a href="/2023/04/24/LevOJ-P1296-%E5%88%86%E5%BD%A2%E5%AE%87%E5%AE%99/">
-        <h2 class="post-title">LevOJ P1296 分形宇宙</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/24/LevOJ-P1296-%E5%88%86%E5%BD%A2%E5%AE%87%E5%AE%99/" class="go-post">阅读全文</a>
-</div>
+<p><strong>思路：</strong></p>
+<p>深度优先搜索 <strong>DFS</strong> 。</p>
+<p>用 <strong>p[10]</strong> 存储哪一行摆过了皇后。</p>
+<p>如果深度超过 <strong>8</strong> ，说明已经棋盘已经摆好了，直接返回。</p>
+<p>如果某一行已经摆过了皇后，直接进入下一行。</p>
+<p>否则判断这行的每一个位置是否能合法地摆放皇后。</p>
+<p><strong>AC代码：</strong></p>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
 
-<div class="post">
-    <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-        <h2 class="post-title">LevOJ P1268 连续子段的最大和</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/" class="go-post">阅读全文</a>
-</div>
+using namespace std;
 
-<div class="post">
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/">
-        <h2 class="post-title">LevOJ P1236 夺取宝藏</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/23
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/" class="go-post">阅读全文</a>
-</div>
+int a[10][10],p[10];
+int cnt=0;
 
-<div class="post">
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
-        <h2 class="post-title">LevOJ P1719 Let&#39;s play a game!</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/" class="go-post">阅读全文</a>
-</div>
+bool judge(int x,int y)&#123;
+    for(int i=1;i&lt;=8;i++)&#123;
+        if(a[i][y]||a[x][i])&#123;
+            return false;
+        &#125;
+    &#125;
+    for(int i=1;i&lt;=8;i++)&#123;
+        for(int j=1;j&lt;=8;j++)&#123;
+            if(abs(i-x)==abs(j-y)&amp;&amp;a[i][j]==1)&#123;
+                return false;
+            &#125;
+        &#125;
+    &#125;
+    return true;
+&#125;
+
+void dfs(int s)&#123;
+    if(s&gt;8)&#123;
+        cnt++;
+        return; 
+    &#125;
+    if(p[s])&#123;
+        dfs(s+1);	
+    &#125;else&#123;
+        for(int i=1;i&lt;=8;i++)&#123;
+            if(judge(s,i))&#123;
+                a[s][i]=1;
+                p[s]=1;
+                dfs(s+1);
+                a[s][i]=0;
+                p[s]=0;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+void solve(int x)&#123;
+    a[1][1]=x;
+    if(a[1][1])&#123;
+        p[1]=1;
+    &#125;
+    for(int i=2;i&lt;=8;i++)&#123;
+        cin&gt;&gt;a[1][i];
+        if(a[1][i])&#123;
+            p[1]=1;						
+        &#125;
+    &#125;
+    for(int i=2;i&lt;=8;i++)&#123;
+        for(int j=1;j&lt;=8;j++)&#123;
+            cin&gt;&gt;a[i][j];
+            if(a[i][j])&#123;
+                p[i]=1;
+            &#125;
+        &#125;
+    &#125;
+    dfs(1);	
+&#125;
 
 
-        <div class="page-current">
-    <div class="prev">
-        
-        <a class="page-num" href="/">
-            <i class="fa-solid fa-caret-left fa-fw"></i>
-        </a>
-        
-    </div>
-    <div class="page-index">
-        
-        <span>
-            
-            
-            <a class="page-num" href="/">1</a>
-        </span>
-        
-        <span class="current">2</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
+int main()&#123;
+    int x;
+    while(scanf(&quot;%d&quot;,&amp;x)!=EOF)&#123;
+        cnt=0;
+        memset(a,0,sizeof(a));
+        memset(p,0,sizeof(p));
+        solve(x);
+        cout&lt;&lt;cnt&lt;&lt;endl;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Masker</div>
-        <div class="description">
-            <p>I must have lost my mind.<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://github.com/bkmashiro">bakamashiro</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -399,6 +291,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
