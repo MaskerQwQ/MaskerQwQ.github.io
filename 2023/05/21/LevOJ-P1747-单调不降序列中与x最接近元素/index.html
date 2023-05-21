@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Masker</title>
+        <title>LevOJ P1747 单调不降序列中与x最接近元素 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -37,7 +37,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -146,256 +148,71 @@
 
             <transition name="into">
             <div id="main" v-show="!loading">
-                <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Masker</h1>
-                <h3>=Nothing is ture=</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>LevOJ P1747 单调不降序列中与x最接近元素</h1>
     </div>
-</div>
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/04/25/LevOJ-P1439-%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2-1-%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%840-1%E8%83%8C%E5%8C%85/">
-        <h2 class="post-title">LevOJ P1439 背包九讲(1)：简单的0-1背包</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/4/25
+            2023/5/21
         </span>
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/25/LevOJ-P1439-%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2-1-%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%840-1%E8%83%8C%E5%8C%85/" class="go-post">阅读全文</a>
-</div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
 
-<div class="post">
-    <a href="/2023/04/25/LevOJ-P1305-%E7%B4%A0%E6%95%B0%E7%8E%AF/">
-        <h2 class="post-title">LevOJ P1305 素数环</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/25
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/25/LevOJ-P1305-%E7%B4%A0%E6%95%B0%E7%8E%AF/" class="go-post">阅读全文</a>
-</div>
+<p><strong>思路：</strong></p>
+<p>先对整个序列排序一下（<del>虽然好像输入本来就是有序的，不过以防万一</del>），然后用 <strong>lower_bound()</strong> 函数返回第一个不小于搜索元素的地址，再减去首地址就是该元素下标。注意和前一个元素比较谁更接近所求元素（一定要加绝对值），输出即可。</p>
+<p><strong>AC代码：</strong></p>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
 
-<div class="post">
-    <a href="/2023/04/24/LevOJ-P1296-%E5%88%86%E5%BD%A2%E5%AE%87%E5%AE%99/">
-        <h2 class="post-title">LevOJ P1296 分形宇宙</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/24/LevOJ-P1296-%E5%88%86%E5%BD%A2%E5%AE%87%E5%AE%99/" class="go-post">阅读全文</a>
-</div>
+#define int long long
 
-<div class="post">
-    <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-        <h2 class="post-title">LevOJ P1268 连续子段的最大和</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/24/LevOJ-P1268-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%AE%B5%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/" class="go-post">阅读全文</a>
-</div>
+using namespace std;
 
-<div class="post">
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/">
-        <h2 class="post-title">LevOJ P1236 夺取宝藏</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/23
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/23/LevOJ-P1236-%E5%A4%BA%E5%8F%96%E5%AE%9D%E8%97%8F/" class="go-post">阅读全文</a>
-</div>
+const int N=1e5+10;
 
-<div class="post">
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/">
-        <h2 class="post-title">LevOJ P1719 Let&#39;s play a game!</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/04/20/LevOJ-P1719-Let-s-play-a-game/" class="go-post">阅读全文</a>
-</div>
+int n,m;
+int a[N];
+int q,l,r;
+int ans;
 
-
-        <div class="page-current">
-    <div class="prev">
-        
-        <a class="page-num" href="/">
-            <i class="fa-solid fa-caret-left fa-fw"></i>
-        </a>
-        
-    </div>
-    <div class="page-index">
-        
-        <span>
-            
-            
-            <a class="page-num" href="/">1</a>
-        </span>
-        
-        <span class="current">2</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
+signed main()&#123;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)&#123;
+        cin&gt;&gt;a[i];
+    &#125;
+    sort(a,a+n);
+    cin&gt;&gt;m;
+    while(m--)&#123;
+        cin&gt;&gt;q;
+        l=lower_bound(a,a+n,q)-a;
+        if(a[l]==q)&#123;
+            cout&lt;&lt;a[l]&lt;&lt;endl;
+        &#125;else&#123;
+            if(abs(a[l-1]-q)&gt;abs(a[l]-q))&#123;
+                cout&lt;&lt;a[l]&lt;&lt;endl;
+            &#125;else&#123;
+                cout&lt;&lt;a[l-1]&lt;&lt;endl;
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Masker</div>
-        <div class="description">
-            <p>I must have lost my mind.<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://github.com/bkmashiro">bakamashiro</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -428,6 +245,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
