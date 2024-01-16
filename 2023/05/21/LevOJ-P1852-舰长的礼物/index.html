@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>LevOJ P1268 连续子段的最大和 | Masker</title>
+        <title>LevOJ P1852 舰长的礼物 | Masker</title>
         <meta name="author" content="Masker" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,53 +150,21 @@
             <div id="main" v-show="!loading">
                 <div class="article">
     <div>
-        <h1>LevOJ P1268 连续子段的最大和</h1>
+        <h1>LevOJ P1852 舰长的礼物</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/4/24
+            2023/5/21
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <span id="more"></span>
-
-<p><strong>思路：</strong></p>
-<p>设 <strong>dp[i]</strong> 为前以第 <strong>i</strong> 个数字结尾的连续字段最大和，则有</p>
-<p>​																	$dp[i]&#x3D;max(num[i],dp[i-1]+num[i])$</p>
-<p>注意， <strong>dp[n]</strong> 并不能代表整段的连续字段最大和，只能表示以 i 为结尾的连续字段最大和。因此处理完第 <strong>i</strong> 个数字，将 <strong>dp[i]</strong> 与历史最大值比较，输出历史最大值即可。</p>
-<p>时间复杂度 <strong>O(n)</strong> </p>
-<p>AC代码：</p>
-<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
-
-using namespace std;
-
-int num[10005];
-int dp[10005];
-
-int main()&#123;
-    int n;
-    while(scanf(&quot;%d&quot;,&amp;n)!=EOF)&#123;
-        for(int i=1;i&lt;=n;i++)&#123;
-            cin&gt;&gt;a[i];
-        &#125;
-        int ans=-60000;
-        dp[1]=a[1];
-        for(int i=2;i&lt;=n;i++)&#123;
-            dp[i]=max(num[i],dp[i-1]+num[i]);
-            ans=max(ans,dp[i]);
-        &#125;
-        cout&lt;&lt;ans&lt;&lt;endl;
-    &#125;
-    return 0;
-&#125;
-</code></pre>
-
+        
     </div>
     
     
